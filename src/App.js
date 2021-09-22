@@ -11,8 +11,7 @@ function App() {
         console.log(data);
     }
 
-    console.log('ERRORS', errors);
-
+    // console.log('ERRORS', errors);
     return (
         <>
             <main>
@@ -84,10 +83,10 @@ function App() {
                                             value: true,
                                             message: "Postcode is verplicht"
                                         },
-                                        // pattern: {
-                                        //     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                        //     message: "Geef een geldige postcode op",
-                                        // },
+                                        pattern: {
+                                            value: /^(?:NL-)?(\d{4})\s*([A-Z]{2})$/i,
+                                            message: "Geef een geldige postcode op",
+                                        },
                                     })}
                                 />
                                 {errors.postalCode && <p>{errors.postalCode.message}</p>}
